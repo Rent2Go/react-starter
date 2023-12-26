@@ -20,10 +20,7 @@ const App = () => {
           <Route path="/productDetail/:id" element={<ProductDetail />} />
           <Route exact path="*" element={<div>Not Found</div>}></Route>
         </Routes>
-<<<<<<< HEAD
-=======
-        <Footer />  {}
->>>>>>> soner
+        <Footer /> {}
       </Router>
     </>
   );
