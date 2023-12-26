@@ -4,7 +4,7 @@ import feyzaImage from '../../assets/feyza.jpg';
 import seyhmusImage from '../../assets/seyhmus.jpg';
 import yagmurImage from '../../assets/yagmur.jpg';
 import sonerImage from '../../assets/soner.png';
-import linkedinIcon from '../../assets/linkedin-icon.png';
+import githubIcon from '../../assets/github.png';
 import './footer.css';
 
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
                                 feyzaerat
                             </a>
                             <a href="#" target="_blank" rel="noreferrer">
-                                <img src={linkedinIcon} alt="LinkedIn" className="linkedin-icon"/>
+                                <img src={githubIcon} alt="Github" className="github-icon"/>
                             </a>
                         </div>
                         <div className="creator">
@@ -29,7 +29,7 @@ const Footer = () => {
                                 ShmsErl
                             </a>
                             <a href="#" target="_blank" rel="noreferrer">
-                                <img src={linkedinIcon} alt="LinkedIn" className="linkedin-icon"/>
+                                <img src={githubIcon} alt="Github" className="github-icon"/>
                             </a>
                         </div>
                         <div className="creator">
@@ -38,7 +38,7 @@ const Footer = () => {
                                 yagmurcurku
                             </a>
                             <a href="#" target="_blank" rel="noreferrer">
-                                <img src={linkedinIcon} alt="LinkedIn" className="linkedin-icon"/>
+                                <img src={githubIcon} alt="Github" className="github-icon"/>
                             </a>
                         </div>
                         <div className="creator">
@@ -47,7 +47,7 @@ const Footer = () => {
                                 sonersyln
                             </a>
                             <a href="#" target="_blank" rel="noreferrer">
-                                <img src={linkedinIcon} alt="LinkedIn" className="linkedin-icon"/>
+                                <img src={githubIcon} alt="Github" className="github-icon"/>
                             </a>
                         </div>
                     </Col>

@@ -25,7 +25,9 @@
     object-fit: cover; 
   }
   
-  .linkedin-icon {
-    width: 30px; 
-    height: auto; 
+  .github-icon{
+    width: 48px; 
+    height: 48px;
+    margin-left: 0.5rem;
+  
   }
