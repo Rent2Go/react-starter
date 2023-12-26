@@ -16,7 +16,7 @@ const AddProduct = () => {
   });
 
   const schema = Yup.object({
-    title: Yup.string().required("Ürün adi zorunludur!"),
+    title: Yup.string().required("Ürün adı zorunludur!"),
     category: Yup.string().required("Zorunlu alan"),
     brand: Yup.string().required("Zorunlu alan"),
     price: Yup.number().required("Zorunlu alan").positive("Negatif olamaz"),
@@ -79,7 +79,7 @@ const AddProduct = () => {
         });
       })
       .catch((error) => {
-        console.error("Form doğrulama hatasi:", error.errors);
+        console.error("Form doğrulama hatası:", error.errors);
       });
   };
 
@@ -90,10 +90,10 @@ const AddProduct = () => {
         <Row className="mb-3">
           <Col>
             <Form.Group controlId="title">
-              <Form.Label>Ürün Adi</Form.Label>
+              <Form.Label>Ürün Adı</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ürün Adini Girin"
+                placeholder="Ürün Adını Girin"
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
@@ -141,10 +141,10 @@ const AddProduct = () => {
           </Col>
           <Col>
             <Form.Group controlId="discountPercentage">
-              <Form.Label>İndirim Orani (%)</Form.Label>
+              <Form.Label>İndirim Oranı (%)</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="İndirim Oranini Girin"
+                placeholder="İndirim Oranını Girin"
                 name="discountPercentage"
                 value={formData.discountPercentage}
                 onChange={handleInputChange}
@@ -153,10 +153,10 @@ const AddProduct = () => {
           </Col>
           <Col>
             <Form.Group controlId="stock">
-              <Form.Label>Stok Miktari</Form.Label>
+              <Form.Label>Stok Miktarı</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Stok Miktarini Girin"
+                placeholder="Stok Miktarını Girin"
                 name="stock"
                 value={formData.stock}
                 onChange={handleInputChange}
@@ -205,9 +205,9 @@ const AddProduct = () => {
                     <br />
                     <strong>Fiyat:</strong> {product.price} TL
                     <br />
-                    <strong>İndirimli Fiyat:</strong> {product.discountedPrice} TL
+                    <strong>İndirimli Fiyat:</strong> {product.discountedPrice}{" "}
+                    TL
                   </Card.Text>
-                
                 </Card.Body>
               </Card>
             </Col>

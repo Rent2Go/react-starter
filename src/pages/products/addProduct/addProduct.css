@@ -10,16 +10,15 @@
     margin-bottom: 30px;
   }
   
-  .form-group {
+  .productForm__section .form-group {
     margin-bottom: 20px;
   }
   
-
   .productList__section {
     margin-top: 40px;
   }
   
-  .card {
+  .productForm__section .card {
     border: none;
     border-radius: 15px;
     overflow: hidden;
@@ -28,34 +27,31 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .card:hover {
+  .productForm__section .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
-  .card img {
+  .productForm__section .card img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    height: 100%;
     object-fit: cover;
   }
   
-  .card-body {
+  .productForm__section .card-body {
     padding: 20px;
   }
   
-  .card-title {
+  .productForm__section .card-title {
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: #2c3e50;
   }
   
-  .card-text {
+  .productForm__section .card-text {
     font-size: 1.2rem;
     color: #7f8c8d;
     line-height: 1.4;
   }
-  
-
   
