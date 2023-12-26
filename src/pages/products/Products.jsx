@@ -7,7 +7,7 @@ import "./products.css";
 const Products = ({ product }) => {
   return (
     <div id="product" className="container mt-10">
-      <AddProduct />
+      
       <ProductCard product={product} />
     </div>
   );

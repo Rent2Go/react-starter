@@ -4,7 +4,6 @@ import axios from "axios";
 import { SiCodereview } from "react-icons/si";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Button, Modal } from "react-bootstrap";
 
 const ProductCard = ({ product }) => {
   // State tanımlamaları

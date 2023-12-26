@@ -30,7 +30,7 @@ const Navbars = () => {
             <Link to="/products" className="nav-link">
               Products
             </Link>
-            <Link to="/categories" className="nav-link">
+            <Link to="/productsAdd" className="nav-link">
               Categories
             </Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
