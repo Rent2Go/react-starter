@@ -26,10 +26,10 @@ const ProductCard = ({ product }) => {
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">{product.description}</p>
               <div className="action-row">
-                <button type="button" src="#" className="btn btn-primary mr-5">
+                <button type="button" src="#" className="btn btn-primary mr-5 btn-sm">
                   Review
                 </button>
-                <button type="button" src="#" className="btn btn-danger">
+                <button type="button" src="#" className="btn btn-danger btn-sm">
                   Delete
                 </button>
               </div>
