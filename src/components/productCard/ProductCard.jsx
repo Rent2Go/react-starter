@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import "./productCard.css";
 import axios from "axios";
+import { SiCodereview } from "react-icons/si";
+import { FaTrash } from "react-icons/fa";
+
 
 const ProductCard = ({ product }) => {
   const [products, setProducts] = useState([]);
@@ -26,11 +29,15 @@ const ProductCard = ({ product }) => {
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">{product.description}</p>
               <div className="action-row">
-                <button type="button" src="#" className="btn btn-primary mr-5 btn-sm">
-                  Review
+                <button
+                  type="button"
+                  src="#"
+                  className="btn btn-secondary btn-sm btn-review"
+                >
+                  <SiCodereview /> Review
                 </button>
                 <button type="button" src="#" className="btn btn-danger btn-sm">
-                  Delete
+                  <FaTrash /> Delete
                 </button>
               </div>
             </div>
