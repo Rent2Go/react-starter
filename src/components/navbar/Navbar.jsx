@@ -1,23 +1,38 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from "../../../src/assets/logo-dark.png";
 import { Link } from "react-router-dom";
-
 import "./navbar.css";
-import Products from "../../pages/products/Products";
 
 const Navbars = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
+    <Navbar
+      expand="lg"
+      className="bg-body-tertiary"
+      fixed="top"
+      bg="dark"
+      data-bs-theme="dark"
+    >
       <Container>
-        <Navbar.Brand href="#home"><Link to="/products">Rent2Go</Link></Navbar.Brand>
+        <Navbar.Brand href="#home" className="logo-container">
+          <img src={logo} />
+
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#product">Products</Nav.Link>
-            <Nav.Link href="#category">Categories</Nav.Link>
+            <Link to="/products" className="nav-link">
+              Products
+            </Link>
+            <Link to="/categories" className="nav-link">
+              Categories
+            </Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
