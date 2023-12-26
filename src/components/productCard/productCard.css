@@ -1,82 +1,36 @@
 .card-img-top {
-<<<<<<< HEAD
-    object-fit: cover;
-    height: 200px;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .product-card {
-      width: 100%;
-      height: 400px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease-in-out;
-      border-radius: 10px;
-  }
-  
-  .product-card:hover {
-      transform: scale(1.05);
-  }
-  
-  .card-body {
-      flex: 1 1 auto;
-      padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-      color: var(--bs-card-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-  }
-  
-  .card-title{
-      font-size: 18px;
-  }
-  
-  .card-text{
-      font-size:14px;
-  }
-  
-  .action-row {
-      display: flex;
-      justify-content: space-between; 
-      align-items: flex-end;
-      margin-top: auto; 
-      width: 45%;
-  }
-  
-  .action-row button {
-      margin-bottom: 0;
-      padding: 10px;
-      transition: all 0.3s ease-in-out; 
-  }
-  
-  .action-row button:hover {
-      transform: scale(1.1);
-  }
-=======
   object-fit: cover;
   height: 200px;
+  border-radius: 10px 10px 0 0;
 }
 
 .product-card {
   width: 100%;
   height: 400px;
-  -webkit-box-shadow: 5px 3px 5px -3px rgba(68, 68, 68, 0.77);
-  -moz-box-shadow: 5px 3px 5px -3px rgba(68, 68, 68, 0.77);
-  box-shadow: 5px 3px 5px -3px rgba(68, 68, 68, 0.77);
-  border:none!important;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  border: none;
 }
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-end;
 }
+
 .card-title {
   font-size: 18px;
 }
+
 .card-text {
   font-size: 14px;
 }
@@ -90,12 +44,19 @@
 
 .action-row button {
   margin-bottom: 0;
+  padding: 10px;
   display: flex;
   align-items: center;
-  height: ;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
+.action-row button:hover {
+  transform: scale(1.1);
+}
 .btn-review {
   margin-right: 0.5rem;
 }
->>>>>>> f9b900bfca3610286a26160d24b04e2ade0a2522
