@@ -6,6 +6,7 @@ import yagmurImage from '../../assets/yagmur.jpg';
 import sonerImage from '../../assets/soner.png';
 import githubIcon from '../../assets/github.png';
 import './footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -15,40 +16,40 @@ const Footer = () => {
                     <Col className="text-center">
                         <p className="creator-text">Created by:</p>
                         <div className="creator">
-                            <a href="https://github.com/feyzaerat" className="creator-link">
+                            <Link to ="https://github.com/feyzaerat" className="creator-link">
                                 <img src={feyzaImage} alt="Feyza" className="creator-image"/>
                                 feyzaerat
-                            </a>
-                            <a href="#" target="_blank" rel="noreferrer">
+                            </Link>
+                            <Link to="#" target="_blank" rel="noreferrer">
                                 <img src={githubIcon} alt="Github" className="github-icon"/>
-                            </a>
+                            </Link>
                         </div>
                         <div className="creator">
-                            <a href="https://github.com/ShmsErl" className="creator-link">
+                            <Link to="https://github.com/ShmsErl" className="creator-link">
                                 <img src={seyhmusImage} alt="Seyhmus" className="creator-image"/>
                                 ShmsErl
-                            </a>
-                            <a href="#" target="_blank" rel="noreferrer">
+                            </Link>
+                            <Link to="#" target="_blank" rel="noreferrer">
                                 <img src={githubIcon} alt="Github" className="github-icon"/>
-                            </a>
+                            </Link>
                         </div>
                         <div className="creator">
-                            <a href="https://github.com/yagmurcurku" className="creator-link">
+                            <Link to = "https://github.com/yagmurcurku" className="creator-link">
                                 <img src={yagmurImage} alt="Yagmur" className="creator-image"/>
                                 yagmurcurku
-                            </a>
-                            <a href="#" target="_blank" rel="noreferrer">
+                            </Link>
+                            <Link to="#" target="_blank" rel="noreferrer">
                                 <img src={githubIcon} alt="Github" className="github-icon"/>
-                            </a>
+                            </Link>
                         </div>
                         <div className="creator">
-                            <a href="https://github.com/sonersyln" className="creator-link">
+                            <Link to="https://github.com/sonersyln" className="creator-link">
                                 <img src={sonerImage} alt="Soner" className="creator-image"/>
                                 sonersyln
-                            </a>
-                            <a href="#" target="_blank" rel="noreferrer">
+                            </Link>
+                            <Link to="#" target="_blank" rel="noreferrer">
                                 <img src={githubIcon} alt="Github" className="github-icon"/>
-                            </a>
+                            </Link>
                         </div>
                     </Col>
                 </Row>
