@@ -1,47 +1,44 @@
-import React ,{useEffect,useState}from 'react'
-import { useParams } from 'react-router-dom'
-import "./productDetail.css"
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./productDetail.css";
+import axios from "axios";
 
 const ProductDetail = () => {
     let { id } = useParams();
-
-    const [products, setProducts] = useState([]);
-
+  
+    const [product, setProduct] = useState({ images: [] });
+  
     useEffect(() => {
       axiosGet();
     }, []);
-
+  
     const axiosGet = async () => {
-        
-        let response = await axios.get("https://dummyjson.com/products/" + id);
-        setProducts(response.data.products);
-        console.log(response.data.products);
-      };
-    
-    
-  return (
-    <div>
-
-<div className="row">
-      {products.map((product) => (
-        <div className="col-3 mb-3" key={product.id}>
-          <div className="card product-card">
-            <img src={product.images[0]} className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{product.title}</h5>
-              <p className="card-text">{product.description}</p>
-              <div className="action-row">
-                
-              </div>
+      let response = await axios.get("https://dummyjson.com/products/" + id);
+      setProduct(response.data);
+      console.log(response.data);
+    };
+  
+    return (
+      <div className="productDetail__section">
+        <div className="row">
+          <div className="col-12 mb-3 mt-5" key={product.id}>
+            <div className="productDetail__section-image_container">
+              {product.images.map((image, index) => (
+                <img key={index} src={image} alt={`Product Image ${index + 1}`} />
+              ))}
+            </div>
+  
+            <div className="productDetail__section-head">
+              <h1>{product.brand}</h1>
+            </div>
+            <div className="productDetail__section-content">
+              <p className="">{product.description}</p>
+              <div className="action-row"></div>
             </div>
           </div>
         </div>
-      ))}
-    </div>
-
-    </div>
-  )
-}
-
-export default ProductDetail
+      </div>
+    );
+  };
+  
+  export default ProductDetail;

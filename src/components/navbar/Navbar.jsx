@@ -12,13 +12,13 @@ const Navbars = () => {
     <Navbar
       expand="lg"
       className="bg-body-tertiary"
-      fixed="top"
+      
       bg="dark"
       data-bs-theme="dark"
     >
       <Container>
         <Navbar.Brand href="#home" className="logo-container">
-          <img src={logo} />
+          <img className="nav-logo" src={logo} />
 
           <Link to="/" className="nav-link">
             Home
