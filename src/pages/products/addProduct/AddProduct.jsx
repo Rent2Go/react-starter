@@ -207,9 +207,7 @@ const AddProduct = () => {
                     <br />
                     <strong>İndirimli Fiyat:</strong> {product.discountedPrice} TL
                   </Card.Text>
-                  <Button variant="info" size="sm">
-                    Detaylar
-                  </Button>
+                
                 </Card.Body>
               </Card>
             </Col>
