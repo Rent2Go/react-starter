@@ -7,6 +7,7 @@ import Homepage from "../src/pages/homepage/Homepage.jsx";
 
 import "./App.css";
 import ProductDetail from "./pages/products/productDetail/ProductDetail.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 const App = () => {
   return (
@@ -19,6 +20,10 @@ const App = () => {
           <Route path="/productDetail/:id" element={<ProductDetail />} />
           <Route exact path="*" element={<div>Not Found</div>}></Route>
         </Routes>
+<<<<<<< HEAD
+=======
+        <Footer />  {}
+>>>>>>> soner
       </Router>
     </>
   );
