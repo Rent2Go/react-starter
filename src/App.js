@@ -6,6 +6,7 @@ import Products from "../src/pages/products/Products.jsx";
 import Homepage from "../src/pages/homepage/Homepage.jsx";
 
 import "./App.css";
+import ProductDetail from "./pages/products/productDetail/ProductDetail.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Homepage />}></Route>
           <Route exact path="/products" element={<Products />}></Route>
+          <Route exact path="/productDetail" element={<ProductDetail />}></Route>
           <Route exact path="*" element={<div>Not Found</div>}></Route>
         </Routes>
       </BrowserRouter>

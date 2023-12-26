@@ -4,7 +4,7 @@ import "./productCard.css";
 import axios from "axios";
 import { SiCodereview } from "react-icons/si";
 import { FaTrash } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const [products, setProducts] = useState([]);
@@ -29,13 +29,12 @@ const ProductCard = ({ product }) => {
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">{product.description}</p>
               <div className="action-row">
-                <button
-                  type="button"
-                  src="#"
+                <Link
+                  to={`/productDetail/${product.id}`}
                   className="btn btn-secondary btn-sm btn-review"
                 >
-                  <SiCodereview /> Review
-                </button>
+                  <SiCodereview />  Review
+                </Link>
                 <button type="button" src="#" className="btn btn-danger btn-sm">
                   <FaTrash /> Delete
                 </button>
