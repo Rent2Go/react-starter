@@ -23,12 +23,14 @@
     font-size:14px;
 }
 
-.action-row{
+.action-row {
     display: flex;
+    justify-content: space-between; 
     align-items: flex-end;
-    justify-content: flex-end;
+    margin-top: auto; 
+    width: 45%;
+  }
+  
+  .action-row button {
     margin-bottom: 0;
-}
-.action-row button{
-    margin-bottom:0;
-}
+  }
