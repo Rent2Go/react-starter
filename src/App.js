@@ -22,10 +22,10 @@ const App = () => {
           <Route path="/productDetail/:id" element={<ProductDetail />} />
           <Route path="/updateProduct/:id" element={<UpdateProduct />} />
           <Route exact path="/addProduct" element={<AddProduct />}></Route>
-          <Route exact path="/homePage" element={<Homepage/>}></Route>
+          <Route exact path="/homePage" element={<Homepage />}></Route>
           <Route exact path="*" element={<div>Not Found</div>}></Route>
         </Routes>
-        <Footer /> {}
+        <Footer /> { }
       </Router>
     </>
   );

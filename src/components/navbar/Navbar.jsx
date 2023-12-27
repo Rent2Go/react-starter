@@ -11,19 +11,19 @@ import SignedOut from "./SignedOut";
 
 const Navbars = () => {
 
-  const[isAuthentication, setIsAuthentication] = useState(false);
+  const [isAuthentication, setIsAuthentication] = useState(false);
   const history = useNavigate()
 
-  function handleSignOut(params){
-     
+  function handleSignOut(params) {
+
 
     setIsAuthentication(false)
     history('/')
-}
-function handleSignIn(params){
+  }
+  function handleSignIn(params) {
 
-   setIsAuthentication(true)
-}
+    setIsAuthentication(true)
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
@@ -44,13 +44,13 @@ function handleSignIn(params){
             </Link>
           </Nav>
           <Nav className="auth">
-    {
-      isAuthentication ?  <SignedOut signedOut={handleSignOut}/> : <SignedIn signedIn={handleSignIn}/>
-    }
-            
-         
-          
-          
+            {
+              isAuthentication ? <SignedOut signedOut={handleSignOut} /> : <SignedIn signedIn={handleSignIn} />
+            }
+
+
+
+
           </Nav>
         </Navbar.Collapse>
       </Container>

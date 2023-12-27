@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const Homepage = () => {
   return (
-  
- 
+
+
 
     <Form className="form-signin container mt-5">
       <Image className="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
@@ -22,26 +22,28 @@ const Homepage = () => {
       <Form.Group controlId="rememberMe" className="checkbox mb-3">
         <Form.Check type="checkbox" label="Remember me" />
       </Form.Group>
-      <Link className='btn btn-primary' size="lg" block type="submit" to={"/products"}>
-        Sign in
-      </Link>
+      <Button variant="primary" size="lg" block type="submit">
+        <Link to={"/products"}>
+          Sign in
+        </Link>
+      </Button>
       <p className="mt-5 mb-3 text-muted">© 2023-2024</p>
     </Form>
-      
 
 
-    
-
-       
 
 
-     
-      
 
 
- 
-    
-   
+
+
+
+
+
+
+
+
+
   )
 }
 

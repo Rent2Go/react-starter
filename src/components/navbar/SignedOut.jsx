@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Nav, NavDropdown, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import seyhmusImage from '../../assets/seyhmus.jpg';
+import yagmurImage from '../../assets/yagmur.jpg';
 
 
 const SignedOut = (props) => {
@@ -9,7 +9,7 @@ const SignedOut = (props) => {
         <div>
             <Navbar className='auth' expand="sm">
                 <Image
-                    src={seyhmusImage}
+                    src={yagmurImage}
                     roundedCircle
                     width="30"
                     height="30"
