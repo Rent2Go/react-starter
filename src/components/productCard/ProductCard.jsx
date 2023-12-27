@@ -4,7 +4,6 @@ import axios from "axios";
 import { SiCodereview } from "react-icons/si";
 import { FaTrash } from "react-icons/fa";
 import { RiEdit2Line } from "react-icons/ri";
-
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
@@ -19,11 +18,7 @@ const ProductCard = ({ product }) => {
 
   const handleDelete = (id) => {
     addToIdList(id);
-<<<<<<< HEAD
-    alert('Deletion process is underway...');
-=======
-    alert("Silme işlemi gerçekleştiriliyor...");
->>>>>>> 1fe8d1aa6f7909f066381f7558c6cbc02f7899e3
+    alert("Deletion process is underway...");
   };
 
   useEffect(() => {
@@ -36,14 +31,8 @@ const ProductCard = ({ product }) => {
     console.log(response.data.products);
   };
 
-<<<<<<< HEAD
-  let filteredProducts = products.filter((product) => {
-    return idList.map((id) => id !== product.id).every(Boolean);
-=======
-  // idList'teki elemanlar hariç yeni bir ürün listesi oluşturmak için yazdığım kısım
-  let newValue = products.filter((deleteProduct) => {
+  let filteredProducts = products.filter((deleteProduct) => {
     return idList.map((id) => id !== deleteProduct.id).every(Boolean);
->>>>>>> 1fe8d1aa6f7909f066381f7558c6cbc02f7899e3
   });
 
   return (
@@ -63,8 +52,6 @@ const ProductCard = ({ product }) => {
                   <SiCodereview className="icon-review" /> Review
                 </Link>
                 <Link
-<<<<<<< HEAD
-=======
                   to={`/updateProduct/${product.id}`}
                   className="btn btn-warning btn-sm btn-review"
                 >
@@ -72,13 +59,11 @@ const ProductCard = ({ product }) => {
                   Update
                 </Link>
                 <Link
->>>>>>> 1fe8d1aa6f7909f066381f7558c6cbc02f7899e3
                   onClick={() => handleDelete(product.id)}
                   className="btn btn-danger btn-sm btn-review"
                 >
                   <FaTrash /> Delete
                 </Link>
-              
               </div>
             </div>
           </div>
