@@ -9,17 +9,10 @@ import "./navbar.css";
 
 const Navbars = () => {
   return (
-    <Navbar
-      expand="lg"
-      className="bg-body-tertiary"
-      
-      bg="dark"
-      data-bs-theme="dark"
-    >
+    <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#home" className="logo-container">
           <img className="nav-logo" src={logo} />
-
           <Link to="/" className="nav-link">
             Home
           </Link>
@@ -33,16 +26,10 @@ const Navbars = () => {
             <Link to="/productsAdd" className="nav-link">
               Categories
             </Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+          </Nav>
+          <Nav>
+            <NavDropdown title="Menu" id="basic-nav-dropdown" align="end">
+              <NavDropdown.Item href="#action/3.1">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

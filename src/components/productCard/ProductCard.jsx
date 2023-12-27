@@ -18,27 +18,27 @@ const ProductCard = ({ product }) => {
 
   const handleDelete = (id) => {
     addToIdList(id);
-    alert('Silme işlemi gerçekleştiriliyor...');
+    alert('Deletion process is underway...');
   };
 
   useEffect(() => {
-    axiosGet();
+    fetchData();
   }, []);
 
-  const axiosGet = async () => {
+  const fetchData = async () => {
     let response = await axios.get("https://dummyjson.com/products");
     setProducts(response.data.products);
     console.log(response.data.products);
   };
 
-  let newValue = products.filter((deleteProduct) => {
-    return idList.map((id) => id !== deleteProduct.id).every(Boolean);
+  let filteredProducts = products.filter((product) => {
+    return idList.map((id) => id !== product.id).every(Boolean);
   });
 
  
   return (
     <div className="row">
-      {newValue.map((product) => (
+      {filteredProducts.map((product) => (
         <div className="col-3 mb-3" key={product.id}>
           <div className="card product-card">
             <img src={product.images[0]} className="card-img-top" alt="..." />
@@ -53,7 +53,7 @@ const ProductCard = ({ product }) => {
                   <SiCodereview /> Review
                 </Link>
                 <Link
-                  onClick={() =>  handleDelete(product.id)}
+                  onClick={() => handleDelete(product.id)}
                   className="btn btn-danger btn-sm btn-review"
                 >
                   <FaTrash /> Delete
