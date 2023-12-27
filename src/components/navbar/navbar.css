@@ -9,3 +9,10 @@
     justify-content: center;
     align-items: center;
 }
+.auth{
+    display: flex !important;
+    align-items: center;
+    gap: 5;
+    margin-left: 1em;
+    
+}
