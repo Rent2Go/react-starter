@@ -16,16 +16,16 @@ const AddProduct = () => {
   });
 
   const schema = Yup.object({
-    title: Yup.string().required("Ürün adı zorunludur!"),
-    category: Yup.string().required("Zorunlu alan"),
-    brand: Yup.string().required("Zorunlu alan"),
-    price: Yup.number().required("Zorunlu alan").positive("Negatif olamaz"),
+    title: Yup.string().required("Product name is required!"),
+    category: Yup.string().required("Required field"),
+    brand: Yup.string().required("Required field"),
+    price: Yup.number().required("Required field").positive("Cannot be negative"),
     discountPercentage: Yup.number()
-      .required("Zorunlu alan")
-      .min(0, "0'dan küçük olamaz")
-      .max(100, "100'den büyük olamaz"),
-    stock: Yup.number().required("Zorunlu alan").integer(),
-    images: Yup.array().min(1, "En az bir resim ekleyin"),
+      .required("Required field")
+      .min(0, "Cannot be less than 0")
+      .max(100, "Cannot be greater than 100"),
+    stock: Yup.number().required("Required field").integer(),
+    images: Yup.array().min(1, "Add at least one image"),
   });
 
   const handleInputChange = (e) => {
@@ -79,21 +79,21 @@ const AddProduct = () => {
         });
       })
       .catch((error) => {
-        console.error("Form doğrulama hatası:", error.errors);
+        console.error("Form validation error:", error.errors);
       });
   };
 
   return (
     <div className="productForm__section">
-      <h2>Ürün Ekle</h2>
+      <h2>Add Product</h2>
       <Form onSubmit={handleFormSubmit}>
         <Row className="mb-3">
           <Col>
             <Form.Group controlId="title">
-              <Form.Label>Ürün Adı</Form.Label>
+              <Form.Label>Product Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ürün Adını Girin"
+                placeholder="Enter Product Name"
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
@@ -102,10 +102,10 @@ const AddProduct = () => {
           </Col>
           <Col>
             <Form.Group controlId="category">
-              <Form.Label>Kategori</Form.Label>
+              <Form.Label>Category</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Kategori Girin"
+                placeholder="Enter Category"
                 name="category"
                 value={formData.category}
                 onChange={handleInputChange}
@@ -114,10 +114,10 @@ const AddProduct = () => {
           </Col>
           <Col>
             <Form.Group controlId="brand">
-              <Form.Label>Marka</Form.Label>
+              <Form.Label>Brand</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Marka Girin"
+                placeholder="Enter Brand"
                 name="brand"
                 value={formData.brand}
                 onChange={handleInputChange}
@@ -129,10 +129,10 @@ const AddProduct = () => {
         <Row className="mb-3">
           <Col>
             <Form.Group controlId="price">
-              <Form.Label>Fiyat</Form.Label>
+              <Form.Label>Price</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Fiyat Girin"
+                placeholder="Enter Price"
                 name="price"
                 value={formData.price}
                 onChange={handleInputChange}
@@ -141,10 +141,10 @@ const AddProduct = () => {
           </Col>
           <Col>
             <Form.Group controlId="discountPercentage">
-              <Form.Label>İndirim Oranı (%)</Form.Label>
+              <Form.Label>Discount Percentage (%)</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="İndirim Oranını Girin"
+                placeholder="Enter Discount Percentage"
                 name="discountPercentage"
                 value={formData.discountPercentage}
                 onChange={handleInputChange}
@@ -153,10 +153,10 @@ const AddProduct = () => {
           </Col>
           <Col>
             <Form.Group controlId="stock">
-              <Form.Label>Stok Miktarı</Form.Label>
+              <Form.Label>Stock Quantity</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Stok Miktarını Girin"
+                placeholder="Enter Stock Quantity"
                 name="stock"
                 value={formData.stock}
                 onChange={handleInputChange}
@@ -166,7 +166,7 @@ const AddProduct = () => {
         </Row>
 
         <Form.Group controlId="images" className="mb-3">
-          <Form.Label>Resimler</Form.Label>
+          <Form.Label>Images</Form.Label>
           <Form.Control
             type="file"
             multiple
@@ -176,12 +176,12 @@ const AddProduct = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Ekle
+          Add
         </Button>
       </Form>
 
       <div className="productList__section">
-        <h2>Eklenen Ürünler</h2>
+        <h2>Added Products</h2>
         <Row xs={1} md={3} className="g-4">
           {productData.map((product, index) => (
             <Col key={index}>
@@ -199,13 +199,13 @@ const AddProduct = () => {
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
                   <Card.Text>
-                    <strong>Kategori:</strong> {product.category}
+                    <strong>Category:</strong> {product.category}
                     <br />
-                    <strong>Marka:</strong> {product.brand}
+                    <strong>Brand:</strong> {product.brand}
                     <br />
-                    <strong>Fiyat:</strong> {product.price} TL
+                    <strong>Price:</strong> {product.price} TL
                     <br />
-                    <strong>İndirimli Fiyat:</strong> {product.discountedPrice}{" "}
+                    <strong>Discounted Price:</strong> {product.discountedPrice}{" "}
                     TL
                   </Card.Text>
                 </Card.Body>
