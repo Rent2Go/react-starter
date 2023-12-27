@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, Nav, NavDropdown, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import seyhmusImage from '../../assets/seyhmus.jpg';
 
 
 const SignedOut = (props) => {
@@ -8,7 +9,7 @@ const SignedOut = (props) => {
         <div>
             <Navbar className='auth' expand="sm">
                 <Image
-                    src="https://img.freepik.com/premium-psd/3d-cartoon-man-smiling-portrait-isolated-transparent-background-png-psd_888962-1569.jpg"
+                    src={seyhmusImage}
                     roundedCircle
                     width="30"
                     height="30"
