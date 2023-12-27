@@ -1,6 +1,7 @@
 import React from 'react'
 import "./homepage.css"
 import { Button, Form, Image } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Homepage = () => {
   return (
@@ -21,9 +22,9 @@ const Homepage = () => {
       <Form.Group controlId="rememberMe" className="checkbox mb-3">
         <Form.Check type="checkbox" label="Remember me" />
       </Form.Group>
-      <Button variant="primary" size="lg" block type="submit">
+      <Link className='btn btn-primary' size="lg" block type="submit" to={"/products"}>
         Sign in
-      </Button>
+      </Link>
       <p className="mt-5 mb-3 text-muted">© 2023-2024</p>
     </Form>
       

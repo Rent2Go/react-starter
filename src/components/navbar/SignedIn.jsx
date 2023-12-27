@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import Homepage from '../../pages/homepage/Homepage'
+import { Link } from 'react-router-dom'
 
 export const SignedIn = (props) => {
   return (
@@ -9,9 +11,9 @@ export const SignedIn = (props) => {
       <Button variant="primary" onClick={props.signedIn}>
       Login 
       </Button>
-      <Button variant="primary" style={{ marginLeft: '1em' }} onClick={props.sgnedIn}>
+      <Link className='btn btn-primary' style={{ marginLeft: '1em' }} to = {"/homePage"}>
        Sign In
-      </Button>
+      </Link>
   
         
         </div>
