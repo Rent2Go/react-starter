@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../../../src/assets/logo-dark.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
+import { SignedIn } from "./SignedIn";
+import SignedOut from "./SignedOut";
 
 const Navbars = () => {
+
+  const[isAuthentication, setIsAuthentication] = useState(false);
+  const history = useNavigate()
+
+  function handleSignOut(params){
+     
+
+    setIsAuthentication(false)
+    history('/')
+}
+function handleSignIn(params){
+
+   setIsAuthentication(true)
+}
   return (
     <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
@@ -27,10 +43,14 @@ const Navbars = () => {
               Categories
             </Link>
           </Nav>
-          <Nav>
-            <NavDropdown title="Menu" id="basic-nav-dropdown" align="end">
-              <NavDropdown.Item href="#action/3.1">Logout</NavDropdown.Item>
-            </NavDropdown>
+          <Nav className="auth">
+    {
+      isAuthentication ?  <SignedOut signedOut={handleSignOut}/> : <SignedIn signedIn={handleSignIn}/>
+    }
+            
+         
+          
+          
           </Nav>
         </Navbar.Collapse>
       </Container>
