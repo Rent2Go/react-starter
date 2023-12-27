@@ -9,6 +9,7 @@ import "./App.css";
 import ProductDetail from "./pages/products/productDetail/ProductDetail.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import AddProduct from "./pages/products/addProduct/AddProduct.jsx";
+import UpdateProduct from "./pages/products/updateProduct/UpdateProduct.jsx";
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
           <Route exact path="/" element={<Homepage />}></Route>
           <Route exact path="/products" element={<Products />}></Route>
           <Route path="/productDetail/:id" element={<ProductDetail />} />
-          <Route exact path="/productsAdd" element={<AddProduct />}></Route>
+          <Route path="/updateProduct/:id" element={<UpdateProduct />} />
+          <Route exact path="/addProduct" element={<AddProduct />}></Route>
           <Route exact path="*" element={<div>Not Found</div>}></Route>
         </Routes>
         <Footer /> {}

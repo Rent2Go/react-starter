@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import * as Yup from "yup";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Form, Button, Card, Col, Row } from "react-bootstrap";
-import "./addProduct.css";
+import axios from "axios";
 
-const AddProduct = () => {
+import "./updateProduct.css"
+
+const UpdateProduct = () => {
+  let { id } = useParams();
+
+  const [product, setProduct] = useState({ images: [] });
   const [productData, setProductData] = useState([]);
   const [formData, setFormData] = useState({
     title: "",
@@ -15,22 +20,30 @@ const AddProduct = () => {
     images: [],
   });
 
-  const schema = Yup.object({
-    title: Yup.string().required("Product name is required!"),
-    category: Yup.string().required("Required field"),
-    brand: Yup.string().required("Required field"),
-    price: Yup.number().required("Required field").positive("Cannot be negative"),
-    discountPercentage: Yup.number()
-      .required("Required field")
-      .min(0, "Cannot be less than 0")
-      .max(100, "Cannot be greater than 100"),
-    stock: Yup.number().required("Required field").integer(),
-    images: Yup.array().min(1, "Add at least one image"),
-  });
+  useEffect(() => {
+    axiosGet();
+  }, []);
+
+  const axiosGet = async () => {
+    let response = await axios.get("https://dummyjson.com/products/" + id);
+    setProduct(response.data);
+
+    // Initialize form data based on product data received from the API
+    setFormData({
+      title: response.data.title,
+      category: response.data.category,
+      brand: response.data.brand,
+      price: response.data.price,
+      discountPercentage: response.data.discountPercentage,
+      stock: response.data.stock,
+      images: response.data.images,
+    });
+
+    console.log(response.data);
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, files } = e.target;
-
     const fileInput = type === "file";
     const fileData = fileInput ? Array.from(files) : [];
 
@@ -54,39 +67,39 @@ const AddProduct = () => {
     const price = parseFloat(formData.price);
     const discountPercentage = parseFloat(formData.discountPercentage) / 100;
 
+    // Check and display an error message if valid conversion cannot be made, or use a default value
+    if (isNaN(price) || isNaN(discountPercentage)) {
+      alert("Please enter a valid price and discount percentage.");
+      return 0; // Or use another default value
+    }
+
     return (price - price * discountPercentage).toFixed(2);
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    schema
-      .validate(formData, { abortEarly: false })
-      .then(() => {
-        const discountedPrice = calculateDiscountedPrice();
 
-        setProductData((prevProductData) => [
-          ...prevProductData,
-          { ...formData, discountedPrice },
-        ]);
-        setFormData({
-          title: "",
-          category: "",
-          brand: "",
-          price: "",
-          discountPercentage: "",
-          stock: "",
-          images: [],
-        });
-      })
-      .catch((error) => {
-        console.error("Form validation error:", error.errors);
-      });
+    const discountedPrice = calculateDiscountedPrice();
+
+    setProductData((prevProductData) => [
+      ...prevProductData,
+      { ...formData, discountedPrice },
+    ]);
+
+    setFormData({
+      title: "",
+      category: "",
+      brand: "",
+      price: "",
+      discountPercentage: "",
+      stock: "",
+      images: [],
+    });
   };
 
   return (
-
     <div className="productForm__section">
-      <h2>Add Product</h2>
+      <h2>Product Update</h2>
       <Form onSubmit={handleFormSubmit}>
         <Row className="mb-3">
           <Col>
@@ -165,24 +178,31 @@ const AddProduct = () => {
             </Form.Group>
           </Col>
         </Row>
-
-        <Form.Group controlId="images" className="mb-3">
-          <Form.Label>Images</Form.Label>
-          <Form.Control
-            type="file"
-            multiple
-            name="images"
-            onChange={handleImageUpload}
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Add
-        </Button>
+        <div className="row">
+          <div className="col-12">
+            <Form.Group controlId="images" className="mb-3">
+              <Form.Label>Images</Form.Label>
+              <Form.Control
+                type="file"
+                multiple
+                name="images"
+                onChange={handleImageUpload}
+              />
+            </Form.Group>
+          </div>
+        </div>
+        <div className="btn-container">
+          <Button variant="outline-success btn-update" type="submit">
+            Save
+          </Button>
+          <Button variant="outline-danger" type="submit">
+            Cancel
+          </Button>
+        </div>
       </Form>
 
       <div className="productList__section">
-        <h2>Added Products</h2>
+        <h2>Updated Products</h2>
         <Row xs={1} md={3} className="g-4">
           {productData.map((product, index) => (
             <Col key={index}>
@@ -190,7 +210,8 @@ const AddProduct = () => {
                 <Card.Img
                   variant="top"
                   src={
-                    product.images.length > 0
+                    product.images.length > 0 &&
+                    product.images[0] instanceof Blob
                       ? URL.createObjectURL(product.images[0])
                       : "https://via.placeholder.com/300"
                   }
@@ -219,5 +240,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
-
+export default UpdateProduct;

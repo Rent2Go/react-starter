@@ -1,8 +1,11 @@
 .footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 20px 0;
-  }
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
   
   .creator-text {
     margin-bottom: 1rem;

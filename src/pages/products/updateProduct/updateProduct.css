@@ -1,8 +1,13 @@
 .productForm__section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  max-width: 75%;
+  margin: 4rem  auto;
+  padding: 2rem 10rem;
+  background: #FEFEFE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   
   .productForm__section h2 {
     color: #2c3e50;
@@ -15,17 +20,23 @@
   }
   
   .productList__section {
-    margin-top: 40px;
-  }
+    margin: 4rem 3rem 15rem 15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
   
-  .productForm__section .card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.productForm__section .card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 290px;
+}
   
   .productForm__section .card:hover {
     transform: scale(1.05);
@@ -55,3 +66,13 @@
     line-height: 1.4;
   }
   
+  .btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .btn-update{
+    margin-right: 0.5rem;
+  }
