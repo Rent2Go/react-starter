@@ -35,69 +35,9 @@ const AddProduct = () => {
     }
   )
   return (
-<>
-    <Formik  initialValues={initialValues}
-      validationSchema={schema}
 
-    >
-      <Form className='d-flex flex-column align-items-center mt-4' >
-        <FormField>
-          <label>First Name</label>
-          <Field name= "title" />
-        </FormField>
-        <FormField>
-          <label>Last Name</label>
-          <Field  name="price"/>
-          <ErrorMessage name='price' render={(err)=> 
-          <Label className='btn btn-danger' content={err}></Label>
-          }></ErrorMessage>
-        </FormField>
-        <FormField>
-         
-        </FormField>
-        <Button type='submit'>Add</Button>
-      </Form>
-
-    
-
-    </Formik>
-    <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-
-</>
+   <>
+   </>
    
   )
   
